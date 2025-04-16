@@ -4,7 +4,7 @@ export async function handleApi(request: Request, env: Env): Promise<Response> {
   const url = new URL(request.url);
   
   // Check for x-token header
-  const token = request.headers.get('x-token') || url.searchParams.get('x-token');
+  // const token = request.headers.get('x-token') || url.searchParams.get('x-token');
   
   // Validate token
   // if (!token || token !== env.XTOKEN) {
@@ -33,8 +33,10 @@ export async function handleApi(request: Request, env: Env): Promise<Response> {
         headers: request.headers,
         body: body
       });
+     
+      const json = await response.json();
 
-      return new Response(JSON.stringify(response), {
+      return new Response(JSON.stringify(json), {
         headers: {
           'content-type': 'application/json',
         },
