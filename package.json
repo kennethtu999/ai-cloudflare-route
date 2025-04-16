@@ -17,7 +17,6 @@
     "dash": true
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20250416.0",
     "typescript": "5.8.2",
     "wrangler": "^4.11.1"
   },
@@ -25,6 +24,7 @@
     "check": "tsc && wrangler --experimental-json-config deploy --dry-run",
     "deploy": "wrangler --experimental-json-config deploy",
     "dev": "wrangler --experimental-json-config dev",
-    "types": "wrangler --experimental-json-config types"
+    "types": "wrangler --experimental-json-config types",
+    "update-types": "wrangler types"
   }
 }
