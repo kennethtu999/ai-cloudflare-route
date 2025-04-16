@@ -7,14 +7,14 @@ export async function handleApi(request: Request, env: Env): Promise<Response> {
   const token = request.headers.get('x-token') || url.searchParams.get('x-token');
   
   // Validate token
-  if (!token || token !== env.XTOKEN) {
-    return new Response('Access denied', {
-      status: 403,
-      headers: {
-        'content-type': 'text/plain',
-      },
-    });
-  }
+  // if (!token || token !== env.XTOKEN) {
+  //   return new Response('Access denied', {
+  //     status: 403,
+  //     headers: {
+  //       'content-type': 'text/plain',
+  //     },
+  //   });
+  // }
 
   // Handle POST requests - forward to backend
   if (request.method === 'POST') {
